@@ -1,33 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>flel.github.io</title>
+	<meta http-equiv="refresh" content="0; url=http://labs.russell.wisc.edu/landscape" />
 </head>
 <body>
-	<div id="publications"></div>
-
-	<script src="js/jquery.min.js"></script>
-	<script src='js/tabletop.min.js'></script>
-	<script>
-		window.onload = function() { init() };
-
-		function init() {
-			Tabletop.init( { 
-				key: '1C8wrTYPZmmV0Bje6Tm5mvcj0-k6Eqnzj5V4YhZPs9aQ',
-				orderby: 'citation',
-				callback: fillPubs,
-				simpleSheet: true 
-			} )
-		}
-
-		function fillPubs(data, tabletop) {
-			var htmlString = "<ol>";
-			for (var i=0,  dataLen=data.length; i < dataLen; i++) {
-				var htmlString = htmlString.concat('<li>', data[i]['citation'],' <a href="', data[i]['link'], '" target="_self">PDF</a> ', data[i]['note'], '</li>');
-			}
-			var htmlString = htmlString.concat('</ol>');
-			$('#publications').html(htmlString);
-		}		
-	</script>
+	<h1><a href="http://labs.russell.wisc.edu/landscape/">Redirect</a></h1>
 </body>
 </html>
