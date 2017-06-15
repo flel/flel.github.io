@@ -26,7 +26,16 @@
 			}
 			var htmlString = htmlString.concat('</ol>');
 			$('#publications').html(htmlString);
-		}		
+		}
+
+		// Message parent at labs.russell.wisc.edu/landscape/ the height of the table
+		window.parent.postMessage(
+			// Get height of the content
+			document.body.scrollHeight
+			// Set origin otherWindow must be for event to be dispatched
+			,"http://labs.russell.wisc.edu/landscape/"
+		);
 	</script>
 </body>
 </html>
+<iframe src=""></iframe>
