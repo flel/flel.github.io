@@ -4,7 +4,7 @@
 	<title>FLEL Publications</title>
 </head>
 <body>
-	<div id="publications"></div>
+	<pre id="publications"></pre>
 
 	<script src="js/jquery.min.js"></script>
 	<script src='js/tabletop.min.js'></script>
@@ -21,13 +21,15 @@
 		}
 
 		function fillPubs(data, tabletop) {
-			var htmlString = "<ol>";
+			var htmlString = "<ol>\n";
 			for (var i=0,  dataLen=data.length; i < dataLen; i++) {
-				var htmlString = htmlString.concat('<li>', data[i]['citation'],' <a href="', data[i]['link'], '" target="_self">PDF</a> ', data[i]['note'], '</li>');
+				var htmlString = htmlString.concat('<li>', data[i]['citation'],' <i><a href="', data[i]['link'], '" target="_self">PDF</a></i> ', data[i]['note'], '</li>\n');
 			}
 			var htmlString = htmlString.concat('</ol>');
+			// Replace characters so html code can be displayed for copying
+			var htmlString = htmlString.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 			$('#publications').html(htmlString);
-		}		
+		}
 	</script>
 </body>
 </html>
